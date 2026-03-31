@@ -1,0 +1,491 @@
+<!-- PROMPT USED -->
+<!--
+Create a modern, attractive, and eye-catching landing page for "Nootech Computer Centre" located in Ashoknagar, Athgarh.
+The landing page should:
+- Have a professional hero section with centre name, tagline, and call-to-action button.
+- Include sections: About Us, Courses Offered, Facilities, Why Choose Us, and Contact.
+- Use clean design, soft gradients, and responsive layout.
+- Highlight beginner-friendly computer courses.
+- Encourage new student admissions.
+- Include icons, cards, and hover effects.
+- Use simple HTML, CSS (no frameworks), and a bit of JavaScript if needed.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nootech Computer Centre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1f2937; }
+
+    /* ===== HERO SECTION ===== */
+    header {
+ /*  background: linear-gradient(135deg, #0b2540, #1e3a8a, #2563eb);*/
+ 
+   background: linear-gradient(130deg, #0c2d48, #1e40af, #60a5fa);
+   background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  color: #ffffff;
+  padding: 25px 20px;;   /* reduced height */
+   justify-content: flex-start;   /* move content to top */
+  text-align: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header h1 { font-size: 7.8rem; margin-bottom: 0px; font-weight: 900; }
+    header h3 { font-weight: 400; font-size: 1.2rem; max-width: 800px; margin: auto; }
+
+   body{margin:0;font-family:Inter;background:#0f1724;color:#e6eef8}
+
+
+header h1 {
+    font-size: 60px;
+}
+header p {
+    font-size: 20px;
+}
+/*
+.btn {
+    background: linear-gradient(135deg, #facc15, #fde68a, #ffffff);
+    color: #007bff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}*/
+
+.btn-soft {
+  background: linear-gradient(135deg, #facc15, #fde68a, #ffffff);
+  color: #007bff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  text-decoration:none;
+ text-decoration-style: wavy;
+  box-shadow: 
+    2px 2px 8px #a3b1c6,
+    -5px -5px 10px #ffffff;
+}
+
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	flex-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+.card {
+    
+    padding: 20px;
+    border-radius: 15px;
+	color:#fff;
+	cursor:pointer;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.card:nth-child(1){background:linear-gradient(135deg,#ff7e5f,#feb47b)}
+.card:nth-child(2){background:linear-gradient(135deg,#6a11cb,#2575fc)}
+.card:nth-child(3){background:linear-gradient(135deg,#43cea2,#185a9d)}
+.card:nth-child(4){background:linear-gradient(135deg,#ff512f,#dd2476)}
+.card:nth-child(5){background:linear-gradient(135deg,#11998e,#38ef7d)}
+.card:nth-child(6){background:linear-gradient(135deg,#fb512f,#db2476)}
+.card:nth-child(7){background:linear-gradient(135deg,#11098e,#37ef7d)}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+.icon{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.dropdown{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .4s ease;
+  font-size:14px;
+}
+
+.card.active .dropdown{
+  max-height:200px;
+  margin-top:10px;
+}
+/* WhatsApp Button */
+.whatsapp{
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 16px;
+  border-radius:50%;
+  font-size:20px;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablets */
+@media (max-width:768px){
+  header{padding:60px 10px}
+  .cards{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+
+/* Mobile */
+@media (max-width:480px){
+  header{padding:50px 10px}
+  .card{padding:15px}
+  .icon{font-size:24px}
+  .dropdown{font-size:13px}
+}
+
+	
+	/* ===== FOOTER ===== */
+    .footer {
+      background: #333;
+      color:white;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.95rem;
+      border-top: 3px solid #ff7e5f;
+    }
+
+    .social-links {
+      margin-top: 20px;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #fff;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      color: #feb47b;
+    }
+
+    .social-links img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+}
+.logo {
+    position: left-side;
+    left: 15spx;
+    top: 15px;
+    width: 150px;
+}
+/* LOGO STYLE */
+.logo-container {
+    display: flex;
+    align-items: left;
+}
+
+/* LOGO IMAGE */
+.logo {
+    width: 150px;
+    animation: floatLogo 3s ease-in-out infinite;
+}
+
+/* 2 PULSE EFFECT */
+.logo {
+    width: 150px;
+    animation: pulse 2s infinite;
+}
+
+/*  ANIMATION */
+@keyframes pulse {
+    0% {
+        filter: drop-shadow(0 0 5px yellow);
+    }
+    50% {
+        filter: drop-shadow(0 0 20px yellow);
+        transform: scale(1.05);
+    }
+    100% {
+        filter: drop-shadow(0 0 5px yellow);
+    }
+}
+.adm{
+ animation: rainbow 3s linear infinite;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #0f172a;
+}
+@keyframes rainbow {
+  0% { color: red; }
+  20% { color: orange; }
+  40% { color: yellow; }
+  60% { color: white; }
+  80% { color: lime; }
+  100% { color: indigo; }
+}
+
+.label{
+
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 1.5;
+  color: yellow;
+}
+
+.c1{
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 1.5;
+  color: black;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<header>
+<img src="G:\Nootech Website details\Nootech Landing page\img\logo.png"  class="logo" width="160"height="120" align="left"></img>
+    <h1>Nootech Computer Centre</h1></br>
+	<p>Your Gateway to Digital Skills | Ashoknagar, Athgarh</p></br>
+	<h4 class="adm"><marquee behavior="alternate">Admissions Open! Enroll Today & Unlock Exclusive Offers Before They End!</marquee></h4></br></br>
+    <a href="#contact" class="btn-soft"><b>Enroll Now</b></a>
+</header>
+
+<section>
+    <h2 class="label">About Us</h2></br>
+    <h3 class="adm">💻 A Govt. Authorized Computer Training Centre, We provide quality computer education for students of all levels. Our goal is to make you digitally skilled and job-ready.</h3>
+</section>
+
+<section>
+    <h2 class="label">Courses Offered</h2></br>
+	<div class="container">
+    <div class="cards">
+	<div class="card" onclick="toggleCard(this)">
+        <div class="icon">🎓</div>
+	        <h3>OS-CIT (Odisha State Certificate in Information Technology)</h3>
+	<div class="dropdown">Learn fundamentals, Typing, File handling, and Basic operations.</div>
+	<div class="dropdown">Certification By ଓଡିଶା ରାଜ୍ୟ ମୁକ୍ତ ବିଶ୍ୱବିଦ୍ୟାଳୟ</div>
+	<div class="dropdown">Duration 3 Months</div>
+	<div class="dropdown">Applicability In All State Govt.jObs,PSUs etc</div>
+      </div>
+		
+		<div class="card" onclick="toggleCard(this)">
+        <div class="icon">🎓</div>
+		<h3>CCC (Course on Computer Concepts)</h3>
+	<div class="dropdown">Learn fundamentals,File handling, Communications & IoT.</div>
+	<div class="dropdown">Certification By NIELIT, Govt. OF India</div>
+	<div class="dropdown">Duration 3 Months</div>
+	<div class="dropdown">Job-Role : Computer Operator, Data Entry Operator and Social Media Operator</div>
+      </div>
+
+		<div class="card" onclick="toggleCard(this)">
+        <div class="icon">🎓</div>
+        <h3>Tally Prime With GST</h3>
+		<div class="dropdown">Basic Accounting , Journals,Ledgers,Vouchers Creation,Recording & Taxation Details with Filing</div>
+	<div class="dropdown">Certification By GTC,Tally </div>
+	<div class="dropdown">Duration 3 Months</div>
+	<div class="dropdown">Job-Role : Book Keeper, Data Entry Operator, Billing Operator and Account Assistant</div>
+      </div>
+		
+		<div class="card" onclick="toggleCard(this)">
+        <div class="icon">🎓</div>		
+        <h3>Programmings</h3>
+		<div class="dropdown">Starting from the basics, we help students build a strong foundation in coding, compiling, debugging, and GUI application development.</div>
+		<div class="dropdown">Certification By LMS </div>
+	<div class="dropdown">Duration Varried Based On Languages</div>
+	<div class="dropdown">Job-Role : Open the gateway to a career in software development.</div>
+      </div>
+		
+		<div class="card" onclick="toggleCard(this)">
+        <div class="icon">🎓</div>	
+		 <h3>Office Automation<h3>
+		<div class="dropdown">100% practical, hands-on training, Work on real-life automation projects</div>
+		<div class="dropdown">Understanding Modules, Procedures & Variables,Working with Loops, Conditions & Functions,Automating reports and data processing
+Creating User Forms (GUI Applications),Error handling and debugging techniques </div>
+	<div class="dropdown">Job-Role : Automate repetitive office tasks,Create salary sheets, invoices, and reports,Manage large data efficiently,Auto-generate daily/weekly reports,Send automated emails from Excel</div>
+	<div class="dropdown"> Total Duration: 3 to 4 Months</div>
+      </div>
+		
+		<div class="card" onclick="toggleCard(this)">
+        <div class="icon">🎓</div>
+        <h3>Hardware & Networking Operator</h3>
+		<div class="dropdown">Learn Computer Hardware & Networking from basics,Practical sessions on LAN setup & troubleshooting,Learn installation, repair & maintenance</div>
+		<div class="dropdown">Assembling & Disassembling a computer,Operating System Installation & Driver Setup,LAN Cabling & RJ45 Pinning (Crimping)</div>
+	<div class="dropdown">Job-Role : Printer Installation &  Share files, printers & devices easily,Install OS and software independently</div>
+	<div class="dropdown"> Total Duration: 2 to 3 Months</div>
+	</div> </div>
+</section>
+
+<section>
+    <h2 class="label">Facilities After Joining</h2></br>
+	<div class="container">
+    <div class="cards">
+	<div class="card" onclick="toggleCard(this)">
+	<div class="icon">💼</div>
+	<h3>Smart Class & Computer Labs</h3>
+	<div class="dropdown">👉1:1 Facilities</div>
+	<div class="dropdown">👉Well Configured Systems</div>
+	<div class="dropdown">👉Long Term Power Backup</div>
+	<div class="dropdown">👉Proper LAN Configuration</div>
+	<div class="dropdown">👉Internet Access </div>
+	<div class="dropdown">👉Printer Facilities </div>
+	<div class="dropdown">👉Separate Study Room </div>
+	<div class="dropdown">👉Safe Campus with CCTV Surveillance </div>
+	<div class="dropdown">👉Smart Display & Projecor Screen Facilities </div>
+	<div class="dropdown">👉Safe Drinking Water Facility with Aquaguard </div>
+	</div>
+		
+		
+	<div class="card" onclick="toggleCard(this)">
+    <div class="icon">💼</div>
+	<h3>Experienced Trainers</h3>
+	<div class="dropdown">👉Highly qualified trainers with strong academic and technical background</div>
+	<div class="dropdown">👉Years of hands-on teaching experience in computer and IT courses</div>
+	<div class="dropdown">👉Expertise in practical-based training and real-world applications</div>
+	<div class="dropdown">👉Friendly and supportive approach with personal attention to every student</div>
+	<div class="dropdown">👉Skilled in simplifying complex concepts for easy understanding </div>
+	<div class="dropdown">👉Proven track record of student success and skill development </div>
+    </div>
+		
+	<div class="card" onclick="toggleCard(this)">
+    <div class="icon">💼</div>
+    <h3>Free Exclusive Benefits You’ll Receive</h3>
+	<div class="dropdown">👉Book Provided After Enrollment.</div>
+	<div class="dropdown">👉Class-wise soft notes (handwritten & digital) provided for easy revision. </div>
+	<div class="dropdown">👉Doubt-solving sessions conducted regularly for better understanding </div>
+	<div class="dropdown">👉Weekend mock test (MT) classes every Saturday to improve performance. </div>
+	<div class="dropdown">👉Flexible timing: Students can adjust their lab schedule according to their needs.</div>
+    </div>
+	
+	<div class="card" onclick="toggleCard(this)">
+    <div class="icon">💼</div>
+	<h3>Digital Attendance System</h3>
+	<div class="dropdown">👉Time-Saving & Automated – No need for manual registers; attendance is recorded instantly </div>
+	<div class="dropdown">👉Improved Discipline & Regularity – Encourages students to maintain punctuality </div>
+	<div class="dropdown">👉Quick Alerts & Notifications – Helps inform students about absences or low attendance</div>
+	<div class="dropdown">👉Eco-Friendly System – Reduces paper usage and supports digital practices </div>
+    </div>	
+		
+			
+	<div class="card" onclick="toggleCard(this)">
+    <div class="icon">💼</div>	
+	<h3>Essential Accessories Provided Free of Cost</h3>
+	<div class="dropdown">👉Free bag provided upon successful enrollment.</div>
+	<div class="dropdown">👉Free ID Card Provided Upon successful Enrollment. </div>
+	<div class="dropdown">👉Exclusive rewards for serious and consistent learners. </div>
+	<div class="dropdown">👉Special cash incentives for students achieving attendance higher than 96% </div>
+	
+    </div>		
+		
+    <div class="card" onclick="toggleCard(this)">
+    <div class="icon">💼</div>	
+	<h3>Free MOCK Test For Digital Literacy Courses(NIELIT)</h3>
+	<div class="dropdown">👉Exam-Oriented Preparation – Helps students become familiar with the actual exam pattern of CCC, ECC, and other courses </div>
+	<div class="dropdown">👉Improves Speed & Accuracy – Regular practice increases answering speed and reduces mistakes </div>
+	<div class="dropdown">👉Builds Confidence – Continuous testing removes exam fear and boosts confidence </div>
+	<div class="dropdown">👉Better Time Management – Trains students to complete exams within the given time limit </div>
+	<div class="dropdown">👉Real Exam Experience – Simulates actual exam environment for better preparation </div>
+	<div class="dropdown">👉Performance Tracking – Monitor progress with regular evaluation and feedback </div>	
+	<div class="dropdown">👉Increases Success Rate – Enhances chances of clearing exams on the first attempt </div>		
+    </div> </div>	
+	
+	
+</section>
+
+<h2 align="center" class="adm">On Site Project work and Self Earning Facilities Only For Serious Learners*</h2>
+<section class="fade">
+
+ <section>
+  <h2 class="label">🎓 Certificate Showcase</h2></br>
+ <div class="cards certificate">
+    <div class="card">
+     <img src="G:\Nootech Website details\Nootech Landing page\img\oscit.jpg" width="220" height="170" alt="certificate">
+    <h3 class="c1">OS-CIT</h3>
+	<h4 class="c1">ଓଡିଶା ରାଜ୍ୟ ମୁକ୍ତ ବିଶ୍ୱବିଦ୍ୟାଳୟ</h4>
+	</div>
+    
+    <div class="card">
+      <img src="G:\Nootech Website details\Nootech Landing page\img\ccc.jpg" width="220" height="170" alt="certificate">
+     <h3 class="c1">CCC</h3>
+	 <h4 class="c1">NIELIT, Govt. OF India</h4>
+	</div>
+    
+    <div class="card">
+     <img src="G:\Nootech Website details\Nootech Landing page\img\osda.jpg" width="220" height="170" alt="certificate">
+   <h3 class="c1">SOLAR PANEL TECHNICIAN</h3>
+   <h4 class="c1">OSDA, GOVT. OF ODISHA</h4>
+   </div>
+	<div class="card">
+      <img src="G:\Nootech Website details\Nootech Landing page\img\sak.jpg" width="220" height="170" alt="certificate">
+    <h3 class="c1">ASH-SAKSHYAM</h3>
+	<h4 class="c1">ASDC,NEW DELHI</h4>
+   </div>
+  </div>
+</section>
+
+
+
+<section>
+    <h2 class="label">Why Choose Us?</h2></br>
+    <h2 class="adm">Affordable fees & Easy Payment Structure , personal attention, and career guidance to help you succeed.</h2>
+	
+</section>
+
+<section id="contact">
+    <h2 class="label">Contact Us</h2></br>
+    <p><font size="10">Ashoknagar, Athgarh</font></p></br>
+    <p><font size="10">Phone: +91-9853895452 / 8637263159</font></p></br>
+	<a href="https://nootechcomputercentre.github.io/main-site/"target="_blank"><font size="13">🌐 Visit Our Site</a></font>
+</section>
+
+<div class="footer">
+       &copy; 2026 Nootech Computer Centre. All rights reserved. | Empowering Digital Innovation |  
+    <div class="social-links">
+      <a href="https://facebook.com/yourpage" target="_blank" title="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/919853895452" class="whatsapp">💬</a>
+
+<script>
+function toggleCard(card){
+  card.classList.toggle("active");
+}
+</script>
+</body>
+</html>
